@@ -1,0 +1,237 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>INFINITY Official - Free Fire Guild</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0d0d0d;
+      color: #f0f0f0;
+      transition: background 0.3s, color 0.3s;
+    }
+    header {
+      padding: 30px;
+      text-align: center;
+      background: linear-gradient(90deg, #ffcc00, #ff6600);
+      color: #0a0a0a;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+      transition: text-shadow 0.3s;
+    }
+    nav {
+      background: #111;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 15px;
+    }
+    nav a {
+      color: #ffcc00;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    nav a:hover { color: #ff6600; }
+    section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+    h2 { color: #ffcc00; margin-bottom: 20px; }
+    .leader, .team, .esports {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .card {
+      border-radius: 12px;
+      padding: 25px;
+      width: 260px;
+      background: linear-gradient(180deg, #1a1a1a, #262626);
+      color: #f0f0f0;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.7);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(255, 102, 0, 0.5);
+    }
+    button, .btn {
+      background: #ff6600;
+      border: none;
+      color: #fff;
+      font-weight: bold;
+      padding: 10px 20px;
+      margin-top: 10px;
+      cursor: pointer;
+      border-radius: 6px;
+      transition: background 0.3s;
+    }
+    button:hover, .btn:hover { background: #ffcc00; color: #111; }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #111;
+      color: #888;
+      font-size: 0.9rem;
+    }
+    .toggle-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #ff6600;
+      border: none;
+      color: white;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 5px;
+      z-index: 1000;
+    }/* Day Mode */
+body.day { background: #fff; color: #111; }
+body.day nav { background: #f9f9f9; }
+body.day nav a { color: #0a0a0a; }
+body.day header { background: linear-gradient(90deg, #ffcc00, #ff6600); color: #111; }
+body.day header h1 { text-shadow: 3px 3px 6px rgba(0,0,0,0.3); }
+body.day .card { background: linear-gradient(180deg, #ffffff, #fff7e6); color: #111; box-shadow: 0 5px 18px rgba(0,0,0,0.2); }
+
+/* Night Mode */
+body:not(.day) header h1 { text-shadow: 2px 2px 6px rgba(255, 102, 0, 0.8); }
+
+/* Popup Modal */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+.modal-content {
+  background: linear-gradient(180deg, #1a1a1a, #262626);
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 400px;
+  color: #ffcc00;
+}
+body.day .modal-content { background: linear-gradient(180deg, #ffffff, #fff7e6); color: #111; }
+.close-btn {
+  background: #ff6600;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin-top: 15px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+  </style>
+</head>
+<body>
+  <button class="toggle-btn" onclick="toggleMode()">🌙</button>
+  <header>
+    <h1>INFINITY Official</h1>
+    <p>Free Fire Esports Team & Guild</p>
+  </header>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#leadership">Leadership</a>
+    <a href="#squads">Squads</a>
+    <a href="#esports">Esports</a>
+    <a href="#events">Events</a>
+    <a href="#join">Join Us</a>
+    <a href="#contact">Contact</a>
+  </nav>  <section id="about">
+    <h2>About Us</h2>
+    <p>We are INFINITY – an esports-focused Free Fire guild dominating Battle Royale and Clash Squad. Our mission is unity, skill, and championship glory.</p>
+  </section>  <section id="leadership">
+    <h2>Guild Leadership</h2>
+    <div class="leader">
+      <div class="card">
+        <h3>Guild Leader</h3>
+        <p>IGN: LeaderName</p>
+        <p>UID: 123456789</p>
+      </div>
+      <div class="card">
+        <h3>Team Leader</h3>
+        <p>IGN: TeamLeader1</p>
+      </div>
+      <div class="card">
+        <h3>Team Leader</h3>
+        <p>IGN: TeamLeader2</p>
+      </div>
+    </div>
+  </section>  <section id="squads">
+    <h2>Squads</h2>
+    <div class="team">
+      <div class="card">
+        <h3>Clash Squad</h3>
+        <p>Players: A, B, C, D</p>
+      </div>
+      <div class="card">
+        <h3>Battle Royale Squad</h3>
+        <p>Players: X, Y, Z, W</p>
+      </div>
+    </div>
+  </section>  <section id="esports">
+    <h2>Esports Team</h2>
+    <div class="esports">
+      <div class="card">
+        <h3>Major Achievement</h3>
+        <p>Free Fire Champions Cup 2024 - Top 5</p>
+      </div>
+      <div class="card">
+        <h3>Upcoming Match</h3>
+        <p>Free Fire City Open 2025 - Quarter Finals</p>
+      </div>
+      <div class="card">
+        <h3>Live Streams</h3>
+        <p>YouTube: Infinity Esports Official</p>
+      </div>
+    </div>
+  </section>  <section id="events">
+    <h2>Events & Tournaments</h2>
+    <p>Upcoming: Free Fire World Series 2025</p>
+    <p>Past: Infinity Clash Masters 2024 - Champions</p>
+  </section>  <section id="join">
+    <h2>Join INFINITY</h2>
+    <p>Requirements: K/D 2+, Level 60+, Active Daily</p>
+    <form>
+      <input type="text" placeholder="Your IGN" required><br><br>
+      <input type="text" placeholder="Your UID" required><br><br>
+      <button type="submit" class="btn">Apply</button>
+    </form>
+  </section>  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Discord: discord.gg/infinity</p>
+    <p>Instagram: @infinityguild</p>
+    <p>YouTube: Infinity Esports</p>
+  </section>  <footer>
+    <p>&copy; 2025 INFINITY Official. All rights reserved.</p>
+  </footer>  <!-- Popup Modal -->  <div class="modal" id="popupModal">
+    <div class="modal-content">
+      <h2>🔥 Upcoming Tournament!</h2>
+      <p>Infinity Official is entering Free Fire City Open 2025. Stay tuned!</p>
+      <button class="close-btn" onclick="closeModal()">Close</button>
+    </div>
+  </div>  <script>
+    function toggleMode(){
+      document.body.classList.toggle('day');
+      document.querySelector('.toggle-btn').textContent = document.body.classList.contains('day') ? '☀️' : '🌙';
+    }
+    function closeModal(){
+      document.getElementById('popupModal').style.display = 'none';
+    }
+    window.onload = function(){
+      document.getElementById('popupModal').style.display = 'flex';
+    }
+  </script></body>
+</html>
